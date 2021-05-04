@@ -1,9 +1,9 @@
 const { Command } = require("discord-akairo");
 
-module.exports = class InviteCommand extends Command {
+module.exports = class CodeCommand extends Command {
   constructor() {
-    super("invite", {
-      aliases: ["invite"],
+    super("code", {
+      aliases: ["code"],
       category: "owner",
       channel: ["guild", "dm"],
       ownerOnly: true,
@@ -13,8 +13,8 @@ module.exports = class InviteCommand extends Command {
   async exec(message) {
     let embed = this.client.util
       .embed()
-      .setTitle('Invite URl')
-      .setDescription(`[Click me](${this.client.config.authURL})`);
+      .setTitle('Souce Code')
+      .setDescription(`[Click me](${this.client.config.github})`);
 
     await message.author.send(embed).catch(() => {
       return message

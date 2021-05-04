@@ -13,7 +13,7 @@ module.exports = class CodeCommand extends Command {
   async exec(message) {
     let embed = this.client.util
       .embed()
-      .setTitle('Souce Code')
+      .setTitle("Souce Code")
       .setDescription(`[Click me](${this.client.config.github})`);
 
     await message.author.send(embed).catch(() => {

@@ -13,7 +13,7 @@ module.exports = class InviteCommand extends Command {
   async exec(message) {
     let embed = this.client.util
       .embed()
-      .setTitle('Invite URl')
+      .setTitle("Invite URl")
       .setDescription(`[Click me](${this.client.config.authURL})`);
 
     await message.author.send(embed).catch(() => {

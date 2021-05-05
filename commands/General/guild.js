@@ -42,7 +42,7 @@ module.exports = class GuildCommand extends Command {
       .embed()
       .setTimestamp()
       .setColor("RANDOM")
-      .setDescription(`General information of **${message.guild.name}**.`)
+      .setDescription(`General information on **${message.guild.name}**.`)
       .addField(
         "Users",
         `\`${
@@ -61,10 +61,6 @@ module.exports = class GuildCommand extends Command {
         {
           name: "Boost count: ",
           value: `${boosts}`,
-        },
-        {
-          name: "Boost level: ",
-          value: `${boostLevel}`,
         },
         {
           name: "Date created: ",

@@ -27,10 +27,14 @@ module.exports = class AsciiCommand extends Command {
   async exec(message, args) {
 
     let query = args.query
+
+    if(query.startsWith('https://')) return message.reply('i dont ascii links!')
+
        //Use the string to convert it to ascii, if there is an error, cancel, if the text is too large, cancel, if not, send
     figlet.text(query, function (err, data) {
         if (err) return message.channel.send("Something went wrong");
-  
+        console.log(err)
+
         if (data.length > 2000)
           return message.channel.send(
             "Too much text to output, for the love of god, don't type an entire essay."

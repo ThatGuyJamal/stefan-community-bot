@@ -4,6 +4,7 @@ module.exports = class Avatar extends Command {
     super("avatar", {
       aliases: ["avatar", "av", "pfp"],
       channel: "guild",
+      category: "fun",
       args: [
         {
           id: "member",

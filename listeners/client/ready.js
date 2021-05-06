@@ -9,10 +9,9 @@ module.exports = class ClientReadyListener extends Listener {
   }
 
   async exec() {
-    console.log(`${this.client.user.tag} is watching Stefan!`);
-    console.log(`The prefix is < < ${this.client.config.prefix} > >`);
+    console.log(`${this.client.user.tag} is watching the community!`);
 
-    await this.client.user.setActivity("Stefan's Community.", {
+    await this.client.user.setActivity("Stefan's Community", {
       type: "WATCHING",
     });
   }

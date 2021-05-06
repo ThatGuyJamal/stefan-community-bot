@@ -5,6 +5,7 @@ const {
 } = require("discord-akairo");
 const config = require("./config");
 const stefan = require("./data/stefan");
+const { Intents } = require("discord.js");
 
 class StefanCore extends AkairoClient {
   constructor() {
@@ -13,7 +14,15 @@ class StefanCore extends AkairoClient {
         ownerID: ["370637638820036608", "804532509332865084"], // ThatGuyJamal#2695 & Stefan Mischook#1967
       },
       {
+        messageCacheLifetime: 180, // 3 min How long a message should stay in the cache until it is considered sweepable
+        messageCacheMaxSize: 200, // Maximum number of messages to cache per channel
+        messageEditHistoryMaxSize: 120, // 2 min - Maximum number of previous versions to hold for an edited message
+        messageSweepInterval: 600, // 15 min - How frequently to remove messages from the cache that are older than the message cache lifetime (in seconds, 0 for never)
         disableMentions: "everyone",
+        ws: {
+          // Options for the WebSocket
+          intents: [Intents.ALL],
+        },
       }
     );
     // globals

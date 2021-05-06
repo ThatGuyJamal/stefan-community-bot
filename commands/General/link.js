@@ -13,13 +13,12 @@ module.exports = class LinkCommand extends Command {
   }
 
   async exec(message) {
-    let url = this.client.config.server
+    let url = this.client.config.server;
 
-    let embed = this.client.util.embed()
-    .setDescription(`The invite url for this server is: \n\n \`${url}\``)
-    
+    let embed = this.client.util
+      .embed()
+      .setDescription(`The invite url for this server is: \n\n \`${url}\``);
 
-    message.channel.send(embed)
-
+    message.channel.send(embed);
   }
 };

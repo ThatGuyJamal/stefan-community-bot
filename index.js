@@ -1,13 +1,13 @@
 const {
-  AkairoClient,
+  DogeCordClient,
   CommandHandler,
   ListenerHandler,
-} = require("discord-akairo");
+} = require("@taminaru/dogecord");
 const config = require("./config");
 const stefan = require("./data/stefan");
 const { Intents } = require("discord.js");
 
-class StefanCore extends AkairoClient {
+class StefanCore extends DogeCordClient {
   constructor() {
     super(
       {
@@ -25,7 +25,7 @@ class StefanCore extends AkairoClient {
         },
       }
     );
-    // globals
+    // command handler
     const commandHandler = new CommandHandler(this, {
       // Options for the command handler goes here.
       directory: "./commands/",
@@ -46,6 +46,7 @@ class StefanCore extends AkairoClient {
       },
     });
 
+    // event handler
     const listenerHandler = new ListenerHandler(this, {
       directory: "./listeners/",
     });
@@ -73,6 +74,6 @@ class StefanCore extends AkairoClient {
 }
 
 const client = new StefanCore();
-client.start();
+client.start(); // running the bot
 
 module.exports = StefanCore;

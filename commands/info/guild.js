@@ -1,4 +1,4 @@
-const { Command } = require("discord-akairo");
+const { Command } = require("@taminaru/dogecord");
 const ms = require("ms");
 
 module.exports = class GuildCommand extends Command {
@@ -6,6 +6,7 @@ module.exports = class GuildCommand extends Command {
     super("guild", {
       aliases: ["guild"],
       channel: "guild",
+      cooldown: 6000,
       category: "general",
       clientPermissions: ["SEND_MESSAGES", "EMBED_LINKS"],
       userPermissions: ["SEND_MESSAGES"],

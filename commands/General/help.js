@@ -1,4 +1,4 @@
-const { Command } = require("discord-akairo");
+const { Command } = require("@taminaru/dogecord");
 module.exports = class HelpCommand extends Command {
   constructor() {
     super("help", {
@@ -8,6 +8,7 @@ module.exports = class HelpCommand extends Command {
 
       clientPermissions: ["EMBED_LINKS", "SEND_MESSAGES"],
       userPermissions: ["SEND_MESSAGES"],
+      cooldown: 6000,
       args: [
         {
           id: "command",

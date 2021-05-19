@@ -1,4 +1,4 @@
-const { Command } = require("discord-akairo");
+const { Command } = require("@taminaru/dogecord");
 
 module.exports = class CodeCommand extends Command {
   constructor() {

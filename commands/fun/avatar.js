@@ -1,10 +1,11 @@
-const { Command } = require("discord-akairo");
+const { Command } = require("@taminaru/dogecord");
 module.exports = class Avatar extends Command {
   constructor() {
     super("avatar", {
       aliases: ["avatar", "av", "pfp"],
       channel: "guild",
       category: "fun",
+      cooldown: 6000,
       args: [
         {
           id: "member",

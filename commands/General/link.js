@@ -1,4 +1,4 @@
-const { Command } = require("discord-akairo");
+const { Command } = require("@taminaru/dogecord");
 const ms = require("ms");
 
 module.exports = class LinkCommand extends Command {
@@ -9,6 +9,7 @@ module.exports = class LinkCommand extends Command {
       category: "general",
       clientPermissions: ["SEND_MESSAGES"],
       userPermissions: ["SEND_MESSAGES"],
+      cooldown: 6000,
     });
   }
 

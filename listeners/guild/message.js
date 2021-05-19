@@ -1,4 +1,4 @@
-const { Listener } = require("discord-akairo");
+const { Listener } = require("@taminaru/dogecord");
 
 module.exports = class MessageListener extends Listener {
   constructor() {
